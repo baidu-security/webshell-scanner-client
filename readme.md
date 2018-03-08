@@ -34,17 +34,17 @@ API response - on success
 
 ```
 {
-  // API errors: usually none
-  "error":  false,
+  // API return status and description
+  "status": 0,
+  "descr":  "Task enqueued",
 
-  // status: always set to pending
-  "status": "pending",
-
-  // calculated sample hash (md5)
-  "hash":   "de7128e140ac0add05d1728ab95d9d5d",
+  // sample hash
+  "md5":    "de7128e140ac0add05d1728ab95d9d5d",
 
   // where to fetch scanning results
-  "url":    "https://scanner.baidu.com/result/2744a8f7b85e799b79caf0ff014bfb3a"
+  "url":    "https://scanner.baidu.com/result/2744a8f7b85e799b79caf0ff014bfb3a",
+
+  "data":   []
 }
 ```
 
@@ -52,10 +52,13 @@ API response - on error
 
 ```
 {
-   "status" : "unknown",
+   // non-zero API status
+   "status": 1
 
    // error description
-   "error" : "File extension 'xxx' is currently unsupported, list of supported file format are: rar zip tar xz tbz tgz tbz2 bz2 gz php phtml inc php3 php4 php5 war jsp jspx asp aspx cer cdx asa ashx asmx cfm"
+   "descr":  "Extension 'xxx' is currently unsupported, list of supported file formats are: rar zip tar xz tbz tgz tbz2 bz2 gz php phtml inc php3 php4 php5 war jsp jspx asp aspx cer cdx asa ashx asmx cfm",
+
+   "data" : [],   
 }
 ```
 
@@ -72,11 +75,14 @@ API response
 ```
 [
   {
-    // total files scanned
-    "cnt": 1,
-
     // sample hash
     "md5": "de7128e140ac0add05d1728ab95d9d5d",
+
+    // total files scanned
+    "total": 1,
+
+    // number of files scanned
+    "scanned": 1,
 
     // number of detections
     "detected": 1,
@@ -84,18 +90,15 @@ API response
     // status: pending/scanning/done
     "status": "done",
 
-    // number of files scanned
-    "scanned": 1,
-
     // results
     "data": [
-      {
+       {
           // relative path (only useful for archives)
           "path": "2744a8f7b85e799b79caf0ff014bfb3a.php",
 
           // produced verdict
           "descr": "BDS.WebShell.Chopper.1"
-      }
+       }
     ]
   }
 ]
