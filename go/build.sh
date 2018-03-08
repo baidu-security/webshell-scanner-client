@@ -12,3 +12,5 @@ GOOS=linux GOARCH=386 go build -o tmp/webdir-linux32.bin main.go
 GOOS=windows GOARCH=386 go build -o tmp/webdir-win32.exe main.go
 
 chmod +x tmp/*
+upx -9 tmp/*
+

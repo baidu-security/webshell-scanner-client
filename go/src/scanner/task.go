@@ -15,19 +15,20 @@ func ProcessFile(filename string) {
 
 	apiResponse, err := Enqueue(filename)
 	if err != nil {
-		log.Println("Enqueue API error: ", err)
+		log.Println("Enqueue API error:", err)
 	} else if apiResponse.Status != 0 {
-		log.Println("Enqueue API error: ", apiResponse.Descr)
+		log.Println("Enqueue API error:", apiResponse.Descr)
 	} else {
-		log.Println("Success. MD5 %s", apiResponse.Md5)
+		log.Println("Success. MD5 is", apiResponse.Md5)
 
-		// query for result repeatly
+		// query for result every few seconds
 		for {
 			resultResponseList, err := Result(apiResponse.Url)
 			if err != nil {
-				log.Println("Result API error: ", err)
+				log.Println("Result API error:", err)
 				break
 			} else {
+				// parse first object
 				resultResponse := (*resultResponseList)[0]
 				if resultResponse.Status == "pending" {
 					log.Printf("Task %s pending\n", apiResponse.Md5)
