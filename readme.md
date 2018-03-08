@@ -8,7 +8,7 @@
 
 ## Introduction
 
-A Golang API client of [https://scanner.baidu.com](https://scanner.baidu.com). The API verifies if a sample is malicious, e.g `command execution backdoor`, `China Chopper`, and other `multi-functional webshell`.
+A Golang API client of [https://scanner.baidu.com](https://scanner.baidu.com). It determines whether a webshell sample is malicious.
 
 ### Supported file formats
 
