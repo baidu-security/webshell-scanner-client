@@ -35,7 +35,7 @@ func PrintResult(resultResponse ResultResponse) {
 	table.SetHeader([]string{"Filename", "Result"})
 	for _, data := range resultResponse.Data {
 		if len(data.Descr) == 0 {
-			data.Descr = '-'
+			data.Descr = "-"
 		}
 
 		table.Append([]string{
