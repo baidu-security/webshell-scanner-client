@@ -24,6 +24,20 @@ Maximum allowed file size is currently `50 MB`, list of supported file formats a
 
 If you submit an unsupported file type it will be rejected.
 
+### Detection capability
+
+We do sandbox analysis, code similarity analysis and static rules. Our current detection rate is `92%` among `6K` distinct webshell samples. 
+
+We can't disclose our sample database, but here's a few interesting ones collected online:
+
+* Obfuscated/Packed
+  * [samples/conflg1.php](samples/conflg1.php)
+  * [samples/chopper.php](samples/chopper.php)
+* VBScript encoded
+  * [samples/devshell.asp](samples/devshell.asp)
+* Other tricks
+  * [samples/unicode.php](samples/unicode.php)
+
 ## CLI usage
 
 The binary release can be downloaded from the [Releases](https://github.com/baidu-security/webshell-scanner-client/releases) tab
