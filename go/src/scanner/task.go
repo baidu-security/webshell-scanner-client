@@ -1,6 +1,7 @@
 package scanner
 
 import (
+	"fmt"
 	"log"
 	"time"
 )
@@ -11,7 +12,8 @@ func ProcessFile(filename string) {
 		return
 	}
 
-	log.Printf("\nSubmitting %s ..\n", filename)
+	fmt.Println("")
+	log.Printf("Submitting %s ..\n", filename)
 
 	apiResponse, err := Enqueue(filename)
 	if err != nil {

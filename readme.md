@@ -41,33 +41,48 @@ Usage: ./tmp/webdir-linux32.bin /tmp/a.php /tmp/b.php ...
 Scanning multiple files:
 
 ```
-# ./tmp/webdir-linux32.bin /tmp/a.zip /tmp/a.php
-2018/03/08 14:30:35 Submitting /tmp/a.zip ..
-2018/03/08 14:30:35 Success. MD5 is 27b545a47aa420e0c0f30ac52eb3bbb8
-2018/03/08 14:30:35 Task 27b545a47aa420e0c0f30ac52eb3bbb8 pending
-+----------+------------------------+
-| FILENAME |         RESULT         |
-+----------+------------------------+
-| b.php    | BDS.WebShell.Exec.1    |
-| a.php    | BDS.WebShell.Chopper.1 |
-| a.js     |                        |
-+----------+------------------------+
-|                SCANNED:     3     |
-|                DETECTED:    2     |
-|                TOTAL FILES: 3     |
-+----------+------------------------+
-2018/03/08 14:30:37 Submitting /tmp/a.php ..
-2018/03/08 14:30:37 Success. MD5 is 695b4b31951eaed322c9127ec0d53011
-2018/03/08 14:30:37 Task 695b4b31951eaed322c9127ec0d53011 pending
-+--------------------------------------+------------------------+
-|               FILENAME               |         RESULT         |
-+--------------------------------------+------------------------+
-| 695b4b31951eaed322c9127ec0d53011.php | BDS.WebShell.Chopper.1 |
-+--------------------------------------+------------------------+
-|                                            SCANNED:     1     |
-|                                            DETECTED:    1     |
-|                                            TOTAL FILES: 1     |
-+--------------------------------------+------------------------+
+# ./tmp/webdir-linux32.bin /tmp/obfuscation.tar /tmp/a.zip
+
+2018/03/08 15:44:41 Submitting /tmp/obfuscation.tar ..
+2018/03/08 15:44:41 Success. MD5 is b34d92050322d85e81f3c4d9358c2c92
+2018/03/08 15:44:41 Task b34d92050322d85e81f3c4d9358c2c92 pending
+2018/03/08 15:44:43 Task b34d92050322d85e81f3c4d9358c2c92 completed
++----------------------------------------+-------------------------+
+|                FILENAME                |         RESULT          |
++----------------------------------------+-------------------------+
+| obfuscation/unicode_var.php            | HEUR.WebShell.Chopper.X |
+| obfuscation/chr.php                    | HEUR.WebShell.Chopper.X |
+| obfuscation/comment.php                | HEUR.WebShell.Chopper.X |
+| obfuscation/arithmetic.php             | -                       |
+| obfuscation/code.php                   | HEUR.WebShell.Chopper.X |
+| obfuscation/string_replace.php         | HEUR.WebShell.Exec.1    |
+| obfuscation/string_return_function.php | HEUR.WebShell.Chopper.X |
+| obfuscation/string_concat.php          | HEUR.WebShell.Chopper.X |
+| obfuscation/slash_oct_string.php       | HEUR.WebShell.Chopper.X |
+| obfuscation/__file__.php               | -                       |
+| obfuscation/non-alphanumeric.php       | HEUR.WebShell.Various   |
+| obfuscation/slash_hex_string.php       | HEUR.WebShell.Chopper.X |
++----------------------------------------+-------------------------+
+|                                              SCANNED:     12     |
+|                                              DETECTED:    10     |
+|                                              TOTAL FILES: 12     |
++----------------------------------------+-------------------------+
+
+2018/03/08 15:44:43 Submitting /tmp/a.zip ..
+2018/03/08 15:44:43 Success. MD5 is 27b545a47aa420e0c0f30ac52eb3bbb8
+2018/03/08 15:44:43 Task 27b545a47aa420e0c0f30ac52eb3bbb8 pending
+2018/03/08 15:44:45 Task 27b545a47aa420e0c0f30ac52eb3bbb8 completed
++----------+-------------------------+
+| FILENAME |         RESULT          |
++----------+-------------------------+
+| b.php    | HEUR.WebShell.Exec.1    |
+| a.php    | HEUR.WebShell.Chopper.X |
+| a.js     | -                       |
++----------+-------------------------+
+|                SCANNED:     3      |
+|                DETECTED:    2      |
+|                TOTAL FILES: 3      |
++----------+-------------------------+
 ```
 
 ## API Usage
