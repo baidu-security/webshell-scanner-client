@@ -1,12 +1,8 @@
 # webshell-scanner-client
 
-[![中文帮助](https://img.shields.io/badge/README-切换语言-blue.svg)](readme-zh_CN.md)
-
-## Introduction
-
 A Golang API client of [https://scanner.baidu.com](https://scanner.baidu.com). 
 
-### List of supported file formats
+**List of supported file formats**
 
 Maximum allowed file size is `50MB`
 
