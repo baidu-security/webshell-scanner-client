@@ -1,6 +1,6 @@
 # webshell-scanner-client
 
-A Golang API client of [https://scanner.baidu.com](https://scanner.baidu.com). It verifies if a sample is malicious, e.g `command execution backdoor`, `China Chopper`, and other `multi-functional webshell`.
+A Golang API client of [https://scanner.baidu.com](https://scanner.baidu.com). The API verifies if a sample is malicious, e.g `command execution backdoor`, `China Chopper`, and other `multi-functional webshell`.
 
 Maximum allowed file size is currently `50 MB`, list of supported file formats are as below:
 
