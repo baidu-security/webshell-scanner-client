@@ -37,6 +37,7 @@ We can't disclose our sample database, but here's a few interesting ones collect
   * [samples/devshell.asp](samples/devshell.asp)
 * Other tricks
   * [samples/unicode.php](samples/unicode.php)
+  * [samples/plusplus.php](samples/plusplus.php)
 
 ## CLI usage
 
