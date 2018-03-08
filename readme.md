@@ -42,22 +42,23 @@ Scanning multiple files:
 
 ```
 # ./tmp/webdir-linux32.bin /tmp/a.zip /tmp/a.php
-2018/03/08 14:16:33 Submitting /tmp/a.zip ..
-2018/03/08 14:16:33 Success. MD5 is fb22bd7d65def142c2471ef30f88fdf8
-2018/03/08 14:16:33 Task fb22bd7d65def142c2471ef30f88fdf8 pending
+2018/03/08 14:30:35 Submitting /tmp/a.zip ..
+2018/03/08 14:30:35 Success. MD5 is 27b545a47aa420e0c0f30ac52eb3bbb8
+2018/03/08 14:30:35 Task 27b545a47aa420e0c0f30ac52eb3bbb8 pending
 +----------+------------------------+
 | FILENAME |         RESULT         |
 +----------+------------------------+
 | b.php    | BDS.WebShell.Exec.1    |
 | a.php    | BDS.WebShell.Chopper.1 |
+| a.js     |                        |
 +----------+------------------------+
-|                SCANNED:     2     |
+|                SCANNED:     3     |
 |                DETECTED:    2     |
-|                TOTAL FILES: 2     |
+|                TOTAL FILES: 3     |
 +----------+------------------------+
-2018/03/08 14:16:35 Submitting /tmp/a.php ..
-2018/03/08 14:16:35 Success. MD5 is 695b4b31951eaed322c9127ec0d53011
-2018/03/08 14:16:35 Task 695b4b31951eaed322c9127ec0d53011 pending
+2018/03/08 14:30:37 Submitting /tmp/a.php ..
+2018/03/08 14:30:37 Success. MD5 is 695b4b31951eaed322c9127ec0d53011
+2018/03/08 14:30:37 Task 695b4b31951eaed322c9127ec0d53011 pending
 +--------------------------------------+------------------------+
 |               FILENAME               |         RESULT         |
 +--------------------------------------+------------------------+

@@ -11,7 +11,7 @@ func ProcessFile(filename string) {
 		return
 	}
 
-	log.Printf("Submitting %s ..\n", filename)
+	log.Printf("\nSubmitting %s ..\n", filename)
 
 	apiResponse, err := Enqueue(filename)
 	if err != nil {
@@ -33,6 +33,7 @@ func ProcessFile(filename string) {
 				if resultResponse.Status == "pending" {
 					log.Printf("Task %s pending\n", apiResponse.Md5)
 				} else if resultResponse.Status == "done" {
+					log.Printf("Task %s completed\n", apiResponse.Md5)
 					PrintResult(resultResponse)
 					break
 				} else {

@@ -34,6 +34,10 @@ func PrintResult(resultResponse ResultResponse) {
 	table.SetAlignment(tablewriter.ALIGN_LEFT)
 	table.SetHeader([]string{"Filename", "Result"})
 	for _, data := range resultResponse.Data {
+		if len(data.Descr) == 0 {
+			data.Descr = '-'
+		}
+
 		table.Append([]string{
 			data.Path,
 			data.Descr,
