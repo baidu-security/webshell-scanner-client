@@ -8,7 +8,7 @@
 
 ## Introduction
 
-A Golang API client of [https://scanner.baidu.com](https://scanner.baidu.com). It determines whether a webshell sample is malicious.
+A Golang API client of [https://scanner.baidu.com](https://scanner.baidu.com). It determines whether a server side script is malicious or not.
 
 ### Supported file formats
 
@@ -26,9 +26,9 @@ If you submit an unsupported file type it will be rejected.
 
 ### Detection capability
 
-We do sandbox analysis, code similarity analysis and static rules. Our current detection rate is `92%` among `6K` distinct webshell samples. 
+We do `sandbox analysis`, `code similarity analysis` and `static signature comparison`. Our current detection rate is `92%` among `6K` distinct webshell samples. 
 
-We can't disclose our sample database, but here's a few interesting ones collected online:
+Since we can't disclose our sample database, but here's a few interesting ones collected online:
 
 * Obfuscated/Packed
   * [samples/conflg1.php](samples/conflg1.php)
