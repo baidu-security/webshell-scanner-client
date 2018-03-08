@@ -6,7 +6,7 @@
 
 A Golang API client of [https://scanner.baidu.com](https://scanner.baidu.com). 
 
-## List of supported file formats
+### List of supported file formats
 
 Maximum allowed file size is `50MB`
 
@@ -24,15 +24,13 @@ The webshell scanner API runs asynchronously. The verdict needs be retrieved lat
 
 ### Enqueue API
 
-Submit a sample for scanning
+Submit a sample to our scanning queue
 
 ```
 curl https://scanner.baidu.com/enqueue -F archive=@web.zip
 ```
 
-#### Example API response 
-
-On success
+API response - on success
 
 ```
 {
@@ -50,7 +48,7 @@ On success
 }
 ```
 
-On Error
+API response - on error
 
 ```
 {
