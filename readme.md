@@ -14,6 +14,51 @@ Maximum allowed file size is currently `50 MB`, list of supported file formats a
 
 If you submit an unsupported file type it will be rejected.
 
+## CLI usage
+
+The binary release can be downloaded from the [Releases](https://github.com/baidu-security/webshell-scanner-client/releases) tab
+
+Usage:
+
+```
+# ./tmp/webdir-linux32.bin
+WebShell scanner API client - Copyright ©2017 Baidu Inc.
+For more details visit: https://scanner.baidu.com
+
+Usage: ./tmp/webdir-linux32.bin /tmp/a.php /tmp/b.php ...
+```
+
+Scanning multiple files:
+
+```
+# ./tmp/webdir-linux32.bin /tmp/a.zip /tmp/a.php
+2018/03/08 14:16:33 Submitting /tmp/a.zip ..
+2018/03/08 14:16:33 Success. MD5 is fb22bd7d65def142c2471ef30f88fdf8
+2018/03/08 14:16:33 Task fb22bd7d65def142c2471ef30f88fdf8 pending
++----------+------------------------+
+| FILENAME |         RESULT         |
++----------+------------------------+
+| b.php    | BDS.WebShell.Exec.1    |
+| a.php    | BDS.WebShell.Chopper.1 |
++----------+------------------------+
+|                SCANNED:     2     |
+|                DETECTED:    2     |
+|                TOTAL FILES: 2     |
++----------+------------------------+
+2018/03/08 14:16:35 Submitting /tmp/a.php ..
+2018/03/08 14:16:35 Success. MD5 is 695b4b31951eaed322c9127ec0d53011
+2018/03/08 14:16:35 Task 695b4b31951eaed322c9127ec0d53011 pending
++--------------------------------------+------------------------+
+|               FILENAME               |         RESULT         |
++--------------------------------------+------------------------+
+| 695b4b31951eaed322c9127ec0d53011.php | BDS.WebShell.Chopper.1 |
++--------------------------------------+------------------------+
+|                                            SCANNED:     1     |
+|                                            DETECTED:    1     |
+|                                            TOTAL FILES: 1     |
++--------------------------------------+------------------------+
+```
+
 ## API Usage
 
 The webshell scanner API runs asynchronously, all uploaded sample is queued for scanning. The result can be retrieved later via the `result` API.
