@@ -89,13 +89,15 @@ API response
 
     // results
     "data": [
-    {
-        // relative path (only useful for archives)
-        "path": "2744a8f7b85e799b79caf0ff014bfb3a.php",
+      {
+          // relative path (only useful for archives)
+          "path": "2744a8f7b85e799b79caf0ff014bfb3a.php",
 
-        // produced verdict
-        "descr": "BDS.WebShell.Chopper.1"
-    }
+          // produced verdict
+          "descr": "BDS.WebShell.Chopper.1"
+      }
+    ]
+  }
 ]
 ```
 
