@@ -38,6 +38,9 @@ Since we can't disclose our sample database, but here's a few interesting ones c
 * Other tricks
   * [samples/unicode.php](samples/unicode.php)
   * [samples/plusplus.php](samples/plusplus.php)
+  * ...
+
+Please see the [samples](samples) directory for more details.
 
 ## CLI usage
 
